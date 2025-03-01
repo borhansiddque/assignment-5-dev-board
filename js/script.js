@@ -13,35 +13,30 @@ document.getElementById('go-blogs-page').addEventListener('click', function () {
 
 
 // Set Dynamic Date
-let date = new Date();
-let setTodayDate = date.toDateString();
+let todayDate = new Date();
+let setTodayDate = todayDate.toDateString();
 let todayDateContainer = document.getElementById('today-date');
 todayDateContainer.innerText = setTodayDate;
-const dayName = date.toDateString().split(" ")[0];
-let todayDay = document.getElementById('todayDay');
+const dayName = todayDate.toDateString().split(" ")[0];
+const todayDay = document.getElementById('todayDay');
 todayDay.innerText = dayName;
-const monthDateYear = date.toDateString().split(" ");
+const monthDateYear = todayDate.toDateString().split(" ");
 const shiftMonthDateYear = monthDateYear.shift();
 todayDateContainer.innerText = monthDateYear;
 
 
 
+const completedBtns = document.getElementsByClassName('card-btn');
 
-// Get the current date
-const today = new Date();
-
-// Formatting options
-const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
-
-// Format the date
-const formatted = today.toLocaleDateString('en-US', options).replace(',', '');
-
-// Split the date into parts
-const parts = formatted.split(' ');
-
-// Display the formatted date in the p tag
-document.getElementById('formattedDate').innerHTML = `<span>${parts[0]},</span> <strong>${parts.slice(1).join(' ')}</strong>`;
-
-
-
-
+for(let button of completedBtns) {
+    button.addEventListener('click', function() {
+        alert('Board Updated Successfully');
+        button.setAttribute("disabled", "");
+        button.classList.add("opacity-40");
+        const taskAssiged = document.getElementById('task-assiged').innerText;
+        let convertTaskAssiged = parseInt(taskAssiged);
+        document.getElementById('task-assiged').innerText = `0${convertTaskAssiged - 1}`;
+        
+        
+    })
+}
