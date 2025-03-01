@@ -13,17 +13,13 @@ document.getElementById('go-blogs-page').addEventListener('click', function () {
 });
 
 
-// Set Dynamic Date
-let todayDate = new Date();
-let setTodayDate = todayDate.toDateString();
-let todayDateContainer = document.getElementById('today-date');
-todayDateContainer.innerText = setTodayDate;
-const dayName = todayDate.toDateString().split(" ")[0];
-const todayDay = document.getElementById('todayDay');
-todayDay.innerText = dayName;
-const monthDateYear = todayDate.toDateString().split(" ");
-const shiftMonthDateYear = monthDateYear.shift();
-todayDateContainer.innerText = monthDateYear;
+// Dynamic Date Set
+const date = new Date();
+const dateSeparate = date.toDateString().split(" ");
+document.getElementById("todayDate").innerHTML = `
+<p class="text-xl">${dateSeparate[0]},</p>
+<h3 class="text-xl font-semibold">${dateSeparate[1]} ${dateSeparate[2]} ${dateSeparate[3]}</h3>
+`;
 
 
 // Card Button Function
