@@ -1,4 +1,4 @@
-// Challenge Part - Body Background Color Changed
+// Body Background Color Changed
 document.getElementById('color-change-btn').addEventListener('click', function () {
     let red = Math.floor(Math.random() * 255);
     let green = Math.floor(Math.random() * 255);
@@ -12,7 +12,6 @@ document.getElementById('go-blogs-page').addEventListener('click', function () {
     window.location.href = "./blog.html";
 });
 
-
 // Dynamic Date Set
 const date = new Date();
 const dateSeparate = date.toDateString().split(" ");
@@ -22,12 +21,19 @@ document.getElementById("todayDate").innerHTML = `
 `;
 
 
+// function for Current Time
+function currentTime() {
+    let date = new Date();
+    return date.toLocaleTimeString();
+}
+
 // Card Button Function
 const completedBtns = document.getElementsByClassName('card-btn');
-const cardTitle = document.getElementsByClassName("card-title")
-for (let button of completedBtns) {
-    button.addEventListener('click', function () {
+const cardTitle = document.getElementsByClassName("card-title");
 
+for (let i = 0; i < completedBtns.length; i++) {
+    const button = completedBtns[i];
+    button.addEventListener('click', function () {
         const taskAssiged = document.getElementById('task-assiged').innerText;
         let convertTaskAssiged = parseInt(taskAssiged);
 
@@ -48,29 +54,26 @@ for (let button of completedBtns) {
         let convertTaskDone = parseInt(taskDone);
         document.getElementById('task-done').innerText = convertTaskDone + 1;
 
-
-        // Get the corresponding card title text
-        const currentCardTitle = cardTitle.innerText;
-        
+        // Task Completed Message
+        let presentTime = currentTime();
+        const currentCardTitle = cardTitle[i].innerText;
         messageContainer = document.getElementById("message-container");
-        p = document.createElement("p");
-        p.innerHTML = `
-        You have Complete The Task ${currentCardTitle} at
+        let div = document.createElement("div");
+        div.innerHTML = `
+            <p class="p-3 mt-4 message-child font-medium">
+                You have Complete The Task ${currentCardTitle} at ${presentTime}
+            </p>
         `;
-        p.classList.add('message-child')
-        messageContainer.appendChild(p);
-
-
+        div.classList.add('bg-[#f4f7ff]');
+        messageContainer.appendChild(div);
     })
 }
 
+
+// History Clear Button Function
 document.getElementById('clear-btn').addEventListener('click', function () {
     const messageChild = document.querySelectorAll('.message-child');
-    for (const element of messageChild) {
-        element.classList.add('hidden');
+    for (const child of messageChild) {
+        child.classList.add('hidden');
     }
 })
-
-
-
-
