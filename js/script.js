@@ -12,6 +12,7 @@ document.getElementById('go-blogs-page').addEventListener('click', function () {
     window.location.href = "./blog.html";
 });
 
+
 // Dynamic Date Set
 const date = new Date();
 const dateSeparate = date.toDateString().split(" ");
@@ -26,7 +27,6 @@ function currentTime() {
     let date = new Date();
     return date.toLocaleTimeString();
 }
-
 // Card Button Function
 const completedBtns = document.getElementsByClassName('card-btn');
 const cardTitle = document.getElementsByClassName("card-title");
@@ -76,4 +76,4 @@ document.getElementById('clear-btn').addEventListener('click', function () {
     for (const child of messageChild) {
         child.classList.add('hidden');
     }
-})
+});
