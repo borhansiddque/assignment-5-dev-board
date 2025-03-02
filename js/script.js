@@ -60,8 +60,8 @@ for (let i = 0; i < completedBtns.length; i++) {
         messageContainer = document.getElementById("message-container");
         let div = document.createElement("div");
         div.innerHTML = `
-            <p class="p-3 mt-4 message-child font-medium">
-                You have Complete The Task ${currentCardTitle} at ${presentTime}
+            <p class="p-3 mt-4 message-child">
+                You have Complete The Task <span class="font-semibold text-[#00303C]">${currentCardTitle}</span> at ${presentTime}
             </p>
         `;
         div.classList.add('bg-[#f4f7ff]');
