@@ -47,7 +47,6 @@ for (let i = 0; i < completedBtns.length; i++) {
 
         button.setAttribute("disabled", "");
         button.classList.add("opacity-40");
-        button.classList.add('cursor-not-allowed')
 
         document.getElementById('task-assiged').innerText = `0${convertTaskAssiged - 1}`;
         const taskDone = document.getElementById('task-done').innerText;
@@ -65,6 +64,7 @@ for (let i = 0; i < completedBtns.length; i++) {
             </p>
         `;
         div.classList.add('bg-[#f4f7ff]');
+        div.classList.add('rounded-lg');
         messageContainer.appendChild(div);
     })
 }
