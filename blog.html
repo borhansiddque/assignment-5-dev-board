@@ -34,33 +34,35 @@
             </div>
         </header>
         <main>
-            <h1 class="my-10 text-center text-4xl font-bold text-[#00303C]">Blogs</h1>
+            <h1 class="my-10 text-center text-4xl font-bold text-[#00303C]">Questions</h1>
             <div class="space-y-5">
                 <div class="bg-white rounded-xl">
                     <h2 class="p-4 text-2xl font-semibold">Question-1: What are the different ways to select an element
                         in the DOM?</h2>
                     <hr>
                     <div class="p-4 space-y-5 opacity-70">
-                        <p class="">1. With Id - getElementById()</p>
-                        <p>2. With Class - getElementsByClassName()</p>
-                        <p>3. With TagName - getElementsByTagName()</p>
+                        <p>1. Selecting by ID - getElementById()</p>
+                        <p>2. Selecting by ClassName - getElementsByClassName()</p>
+                        <p>3. Selecting by TagName - getElementsByTagName()</p>
                         <p>4. With querySelector - querySelector()</p>
                         <p>5. With querySelectorAll - querySelectorAll()</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-xl">
                     <h2 class="p-4 text-2xl font-semibold">Question-2: What is the difference between innerHTML,
-                        innerText, and textContent ?</h2>
+                        innerText, and textContent?</h2>
                     <hr>
                     <div class="p-4 space-y-5">
-                        <p class="opacity-70"></p>
+                        <p class="opacity-70">1.innerHTML -> এটি দিয়ে একটি Element এর ভিতরের সকল HTML Tags পাওয়া যায় এবং নতুন HTML Tags সেট করা যায় এবং তার ভিতর থাকা Comments গুলোও।</p>
+                        <p class="opacity-70">2.innerText -> এটি দিয়ে একটি Element এর ভিতরের সকল Text পাওয়া যায় এবং নতুন Text সেট করা যায় এবং এটি HTML Tags দেখায় না। এটি CSS স্টাইলিং এর দিকে লক্ষ রাখে, তাই যদি টেক্সট লুকানো থাকে এটি দেখায় না।</p>
+
+                        <p class="opacity-70">3.textContent -> এটি দিয়ে একটি Element এর ভিতরের সকল Text পাওয়া যায় এবং সেট করা যায়, যেখানে সব child node অন্তর্ভুক্ত থাকে কিন্তু HTML Tags বাদ যায়। এটি CSS স্টাইলিং এর দিকে লক্ষ রাখে না, তাই যদি লুকানো Text থাকে তাহলে তাও দেখায়।</p>
                     </div>
                 </div>
                 <div class="bg-white rounded-xl">
                     <h2 class="p-4 text-2xl font-semibold">Question-3: What is event delegation in the DOM?</h2>
                     <hr>
-                    <p class="p-4 opacity-70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore ad
-                        delectus nam dolores neque reprehenderit officia odio explicabo accusamus illo!</p>
+                    <p class="p-4 opacity-70">Event delegation হল DOM-এর একটি উপাই যেখানে প্রতিটি child element এ আলাদা আলাদা ইভেন্ট লিসেনার যোগ করার পরিবর্তে, একটি প্যারেন্ট এলিমেন্টে একটি event listener যোগ করা হয়। এই parent element তার child element থেকে bubble up হওয়া ইভেন্টগুলো শুনে। এটি ডাইনামিকভাবে যোগ করা এলিমেন্ট বা অনেকগুলো একই ধরনের এলিমেন্ট এর জন্য খুবই উপকারী।</p>
                 </div>
                 <div class="bg-white rounded-xl">
                     <h2 class="p-4 text-2xl font-semibold">Question-4: What is event bubbling in the DOM?</h2>
